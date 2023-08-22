@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="build-taf" parallel="classes">
+    <test name="engine">
+        <classes>
+            <class name="chapter2.GitHubLoginTest" />
+            <class name="chapter2.GitHubNewRepoTest" />
+        </classes>
+    </test>
+</suite>
