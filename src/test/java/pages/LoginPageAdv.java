@@ -8,42 +8,40 @@
 package pages;
 
 import lombok.Getter;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
-public class MainPage {
+import static org.assertj.core.api.Assertions.assertThat;
 
-    public MainPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+public class LoginPageAdv extends WebBasePage {
+
+    public LoginPageAdv() {
+        super.pageName = "Login Page";
     }
 
     @Getter
-    @FindBy(how = How.LINK_TEXT, using = "Sign in")
-    private WebElement signInLnk;
+    @FindBy(how = How.ID, using = "login_field")
+    private static WebElement usernameFld;
 
     @Getter
-    @FindBy(how = How.XPATH, using = "//summary[@aria-label='View profile and more']")
-    private WebElement userProfileImg;
+    @FindBy(how = How.ID, using = "password")
+    private static WebElement passwordFld;
 
-//    public void clickSignIn() {
-//        clickElement(signInLnk);
-//        getElement(signInBtn);
-//        assertThat(signInBtn.isDisplayed()).isTrue();
-//    }
-//
-//    public void setAccount(String username, String password) {
-//        getElement(passwordFld);
-//        inputText(usernameFld, username);
-//        inputText(passwordFld, password);
-//        clickElement(signInBtn);
-//    }
-//
-//    public void verifySignedIn() {
-//        assertThat(userProfileImg.isDisplayed()).as("The user profile image displayed").isTrue();
-//    }
+    @Getter
+    @FindBy(how = How.NAME, using = "commit")
+    private static WebElement signInBtn;
+
+    public void setAccount(String username, String password) {
+        getElement(passwordFld);
+        inputText(usernameFld, username);
+        inputText(passwordFld, password);
+        clickElement(signInBtn);
+    }
+
+    public void verifySignedIn() {
+        assertThat(new MainPageAdv().getUserProfileImg().isDisplayed()).as("The user profile image displayed").isTrue();
+    }
 
 //    public void clickChineseLink() {
 //        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");

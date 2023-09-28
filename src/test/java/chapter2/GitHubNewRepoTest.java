@@ -6,7 +6,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.LoginPageAdv;
 import pages.MainPage;
+import pages.MainPageAdv;
 
 import java.time.Duration;
 

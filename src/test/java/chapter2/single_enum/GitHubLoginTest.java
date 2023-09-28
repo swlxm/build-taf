@@ -1,10 +1,11 @@
 package chapter2.single_enum;
 
 import chapter2.singleton.GitHubTestBase;
-import entities.Person;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.LoginPageAdv;
 import pages.MainPage;
+import pages.MainPageAdv;
 
 public class GitHubLoginTest extends GitHubTestBase {
 

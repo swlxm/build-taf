@@ -2,6 +2,7 @@ package engine;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,10 +13,10 @@ import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-public class MobileCapabilites {
-    private static Logger logger = LoggerFactory.getLogger(MobileCapabilites.class);
+public class MobileCapabilities {
+    private static Logger logger = LoggerFactory.getLogger(MobileCapabilities.class);
 
-    public DesiredCapabilities getDeviceCapabilitiesFromPlataform(String mavenEnvironment) {
+    public Capabilities getDeviceCapabilitiesFromPlatform(String mavenEnvironment) {
 
         DesiredCapabilities desiredCapabilities = null;
         if (mavenEnvironment.contains("ANDROID")) {

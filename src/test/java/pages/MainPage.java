@@ -14,42 +14,22 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class MainPage {
 
-    public LoginPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public MainPage(WebDriver driver) {
+        super();
     }
 
     @Getter
-    @FindBy(how = How.ID, using = "login_field")
-    private WebElement usernameFld;
+    @FindBy(how = How.LINK_TEXT, using = "Sign in")
+    private WebElement signInLnk;
 
     @Getter
-    @FindBy(how = How.ID, using = "password")
-    private WebElement passwordFld;
-
-    @Getter
-    @FindBy(how = How.NAME, using = "commit")
-    private WebElement signInBtn;
+    @FindBy(how = How.XPATH, using = "//summary[@aria-label='View profile and more']")
+    private WebElement userProfileImg;
 
 //    public void clickSignIn() {
-//        new MainPage().getSignInLnk().click();
-//        assertThat(signInBtn.isDisplayed()).isTrue();
-//    }
-//
-//    public void setAccount(String username, String password) {
-//        getElement(passwordFld);
-//        inputText(usernameFld, username);
-//        inputText(passwordFld, password);
-//        clickElement(signInBtn);
-//    }
-//
-//    public void verifySignedIn() {
-//        assertThat(userProfileImg.isDisplayed()).as("The user profile image displayed").isTrue();
-//    }
-
-//    public void clickSignIn() {
-//        clickElement(new MainPage().getSignInLnk());
+//        clickElement(signInLnk);
 //        getElement(signInBtn);
 //        assertThat(signInBtn.isDisplayed()).isTrue();
 //    }
@@ -64,7 +44,7 @@ public class LoginPage {
 //    public void verifySignedIn() {
 //        assertThat(userProfileImg.isDisplayed()).as("The user profile image displayed").isTrue();
 //    }
-//
+
 //    public void clickChineseLink() {
 //        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 //        WebDriverWait wait = new WebDriverWait(driver, 30);
